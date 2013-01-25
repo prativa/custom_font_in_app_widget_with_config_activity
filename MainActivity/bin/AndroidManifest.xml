@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.braindigit.nepal.khabar"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="8"
+        android:targetSdkVersion="16" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+       
+        <receiver
+            android:name="com.braindigit.nepal.khabar.appwidgets.WidgetProviderLarge"
+            android:icon="@drawable/ic_launcher"
+            android:label="Nepal Khabar [Large]" >
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/appwidgetproviderinfo_large" />
+        </receiver>
+
+        <!-- app widget configuration activity -->
+        <activity android:name="com.braindigit.nepal.khabar.appwidgets.ConfigurationActivity" >
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_CONFIGURE" />
+            </intent-filter>
+        </activity>
+        
+         <service android:name="com.braindigit.nepal.khabar.appwidgets.WidgetProviderLarge$UpdateWidgetService" />
+        
+        
+    </application>
+
+</manifest>

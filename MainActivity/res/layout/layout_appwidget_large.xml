@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/widgetRootLayout"
+    android:layout_width="match_parent"
+    android:layout_height="155dp"
+    android:orientation="vertical" >
+
+    <ImageView
+        android:id="@+id/widgetNewsCategoryTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+         android:background="@drawable/cat_tag"
+        android:layout_alignParentTop="true"
+        android:padding="3dp" />
+
+    <ImageView
+        android:id="@+id/widgetRefreshImg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/widgetMiddleLayout"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true" />
+
+    <RelativeLayout
+        android:id="@id/widgetMiddleLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/widgetNewsCategoryTitle"
+        android:background="#E7EBE7"
+        android:orientation="horizontal" > <!-- Relative layout is used to overflow the two arrows -->
+
+        <LinearLayout
+            android:id="@+id/newsBoxContainer"
+            android:layout_width="match_parent"
+            android:layout_height="85dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:orientation="horizontal"
+            android:weightSum="3" > <!-- Linear Layout is used to give the three images same weight -->
+
+            <ImageView
+                android:id="@+id/widgetNewsText1"
+                android:layout_width="wrap_content"
+                  android:background="@drawable/news_box_bg_active"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:clickable="true"
+                android:paddingBottom="5dp"
+                android:paddingLeft="15dp" />
+
+            <ImageView
+                android:id="@+id/widgetNewsText2"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                  android:background="@drawable/news_box_bg_active"
+                android:clickable="true"
+                android:paddingBottom="5dp" />
+
+            <ImageView
+                android:id="@+id/widgetNewsText3"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:clickable="true"
+                  android:background="@drawable/news_box_bg_active"
+                android:paddingBottom="5dp" />
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/widgetPrevImg"
+            android:layout_width="30dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true"
+            android:layout_marginBottom="4dp"
+            android:layout_marginTop="2dp"
+            android:clickable="true"
+            android:focusable="true" />
+        <!--
+In relative layout the element is positioned according to the order it is added,
+            so this previous is positioned after the images, so that its position is over the first image
+        -->
+
+        <ImageView
+            android:id="@+id/widgetNextImg"
+            android:layout_width="30dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:layout_marginBottom="4dp"
+            android:layout_marginTop="2dp"
+            android:clickable="true"
+            android:focusable="true" />
+
+        <ImageView
+            android:id="@+id/widgetNewsSummaryText"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+              android:background="@drawable/news_box_bg_active"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp" />
+    </RelativeLayout>
+
+</RelativeLayout>
